@@ -1,0 +1,25 @@
+-- Create a sneaker store database
+
+CREATE TABLE sneakers (id INTEGER PRIMARY KEY, brand TEXT, category TEXT, price INTEGER, size INTEGER, colorway TEXT, quantity INTEGER);
+
+INSERT INTO sneakers VALUES (1, "adidas", "tennis", 150, 9, "green", 8);
+INSERT INTO sneakers VALUES (2, "nike", "football", 250, 8, "blue", 5);
+INSERT INTO sneakers VALUES (3, "puma", "running", 155, 7, "yellow", 6);
+INSERT INTO sneakers VALUES (4, "reebok", "basketball", 167, 10, "white", 3);
+INSERT INTO sneakers VALUES (5, "underarmor", "running", 152, 11, "white", 9);
+INSERT INTO sneakers VALUES (6, "nike", "football", 220, 9, "black", 8);
+INSERT INTO sneakers VALUES (7, "reebok", "crosstraining", 110, 8, "blue", 2);
+INSERT INTO sneakers VALUES (8, "rebook", "basketball", 160, 10, "white", 5);
+INSERT INTO sneakers VALUES (9, "nike", "basketball", 180, 8, "red", 12);
+INSERT INTO sneakers VALUES (10, "adidas", "running", 130, 11, "yellow", 2);
+INSERT INTO sneakers VALUES (11, "puma", "tennis", 190, 7, "white", 3);
+INSERT INTO sneakers VALUES (12, "nike", "volleyball", 120, 10, "pink", 6);
+INSERT INTO sneakers VALUES (13, "fila", "tennis", 140, 8, "orange", 7);
+INSERT INTO sneakers VALUES (14, "underarmor", "running", 150, 9, "red", 3);
+INSERT INTO sneakers VALUES (15, "converse", "crosstraining", 200, 12, "white", 4);
+
+-- Display the database ordered by price
+SELECT * FROM sneakers GROUP BY price;
+
+-- Display the quantity available for each sneaker brand
+SELECT brand, SUM (quantity) FROM sneakers GROUP BY brand;
